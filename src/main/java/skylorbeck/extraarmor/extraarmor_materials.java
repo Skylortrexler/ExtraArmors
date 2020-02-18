@@ -3,13 +3,19 @@ package skylorbeck.extraarmor;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.util.LazyLoadBase;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
+import net.minecraftforge.common.Tags;
 
 import java.util.function.Supplier;
 
-public class extraarmor_materials implements IArmorMaterial {
-    
+public enum extraarmor_materials implements IArmorMaterial {
+
+    WOOD("wood",5,new int[]{1,2,3,1},10,SoundEvents.ITEM_ARMOR_EQUIP_TURTLE,0.0F,()->{
+        return Ingredient.fromTag(ItemTags.PLANKS);
+    });
 
     private static final int[] MAX_DAMAGE_ARRAY = new int[]{13, 15, 16, 11};
     private final String name;

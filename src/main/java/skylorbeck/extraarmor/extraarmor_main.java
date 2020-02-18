@@ -17,6 +17,7 @@ public class extraarmor_main {
         @SubscribeEvent
         public static void onItemRegistery(RegistryEvent.Register<Item> event) {
             event.getRegistry().registerAll(
+                extraarmor_list.WOOD_HELMET
             );
         }
     }
